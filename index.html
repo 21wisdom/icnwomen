@@ -5,9 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>💜 인천 여성정책 제안 플랫폼</title>
   <style>
-    /* ============================================================
-       DESIGN TOKENS
-    ============================================================ */
     :root {
       --purple-50:  #f5f3ff;
       --purple-100: #ede9fe;
@@ -40,10 +37,6 @@
       --radius-lg:  22px;
       --radius-xl:  32px;
     }
-
-    /* ============================================================
-       RESET & BASE
-    ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -56,15 +49,10 @@
     ul { list-style: none; }
     input, textarea, select, button { font-family: inherit; font-size: inherit; }
 
-    /* ============================================================
-       PAGES (SPA routing)
-    ============================================================ */
     .page { display: none; }
     .page.active { display: block; }
 
-    /* ============================================================
-       HEADER / NAV
-    ============================================================ */
+    /* HEADER */
     .site-header {
       position: sticky; top: 0; z-index: 100;
       background: var(--white);
@@ -73,29 +61,24 @@
     }
     .nav-inner {
       max-width: 1100px; margin: 0 auto;
-      padding: 0 24px;
-      height: 68px;
+      padding: 0 24px; height: 68px;
       display: flex; align-items: center; gap: 32px;
     }
     .nav-logo {
       font-size: 1.25rem; font-weight: 800;
       color: var(--purple-700);
-      display: flex; align-items: center; gap: 8px;
-      cursor: pointer;
+      display: flex; align-items: center; gap: 8px; cursor: pointer;
     }
     .nav-logo span.logo-badge {
       background: linear-gradient(135deg, var(--purple-500), var(--pink-500));
       color: #fff; padding: 3px 10px; border-radius: 20px;
       font-size: .75rem; font-weight: 700;
     }
-    .nav-links {
-      display: flex; gap: 4px; flex: 1;
-    }
+    .nav-links { display: flex; gap: 4px; flex: 1; }
     .nav-links a {
       padding: 8px 16px; border-radius: var(--radius-sm);
       font-size: .9rem; font-weight: 500; color: var(--gray-600);
-      transition: all .18s;
-      cursor: pointer;
+      transition: all .18s; cursor: pointer;
     }
     .nav-links a:hover, .nav-links a.active {
       background: var(--purple-50); color: var(--purple-700);
@@ -105,14 +88,11 @@
       background: linear-gradient(135deg, var(--purple-600), var(--pink-500));
       color: #fff; padding: 10px 22px; border-radius: var(--radius-xl);
       font-weight: 700; font-size: .9rem; border: none; cursor: pointer;
-      box-shadow: 0 3px 12px rgba(124,58,237,.35);
-      transition: all .2s;
+      box-shadow: 0 3px 12px rgba(124,58,237,.35); transition: all .2s;
     }
     .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(124,58,237,.45); }
 
-    /* ============================================================
-       BUTTONS
-    ============================================================ */
+    /* BUTTONS */
     .btn {
       display: inline-flex; align-items: center; gap: 8px;
       padding: 14px 30px; border-radius: var(--radius-xl);
@@ -129,9 +109,6 @@
       border: 2px solid var(--purple-300);
     }
     .btn-secondary:hover { background: var(--purple-50); border-color: var(--purple-500); }
-    .btn-sm {
-      padding: 8px 18px; font-size: .85rem; border-radius: 20px;
-    }
     .btn-vote {
       background: linear-gradient(135deg, var(--purple-500), var(--pink-400));
       color: #fff; padding: 12px 28px; border-radius: 30px;
@@ -142,12 +119,10 @@
     .btn-vote:hover { transform: scale(1.04); }
     .btn-vote.voted {
       background: var(--gray-200); color: var(--gray-500);
-      box-shadow: none; cursor: default;
+      box-shadow: none; cursor: default; transform: none;
     }
 
-    /* ============================================================
-       TAGS / BADGES
-    ============================================================ */
+    /* TAGS */
     .tag {
       display: inline-block;
       padding: 4px 12px; border-radius: 20px;
@@ -168,32 +143,21 @@
     .rank-3 { background: #ffedd5; color: #9a3412; }
     .rank-n { background: var(--purple-100); color: var(--purple-700); }
 
-    /* ============================================================
-       SECTION WRAPPER
-    ============================================================ */
+    /* LAYOUT */
     .section { padding: 72px 24px; }
     .section-narrow { max-width: 720px; margin: 0 auto; }
     .section-wide   { max-width: 1100px; margin: 0 auto; }
-    .section-title {
-      font-size: 1.9rem; font-weight: 800; color: var(--gray-800);
-      margin-bottom: 10px;
-    }
-    .section-subtitle {
-      font-size: 1rem; color: var(--gray-500); margin-bottom: 40px;
-    }
+    .section-title { font-size: 1.9rem; font-weight: 800; color: var(--gray-800); margin-bottom: 10px; }
+    .section-subtitle { font-size: 1rem; color: var(--gray-500); margin-bottom: 40px; }
 
-    /* ============================================================
-       HOME — HERO BANNER
-    ============================================================ */
+    /* HERO */
     .hero {
       background: linear-gradient(135deg, var(--purple-700) 0%, var(--purple-500) 50%, var(--pink-500) 100%);
-      padding: 100px 24px 80px;
-      text-align: center;
+      padding: 100px 24px 80px; text-align: center;
       position: relative; overflow: hidden;
     }
     .hero::before {
-      content: '';
-      position: absolute; inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     }
     .hero-inner { position: relative; max-width: 780px; margin: 0 auto; }
@@ -203,10 +167,7 @@
       line-height: 1.25; margin-bottom: 18px;
       text-shadow: 0 2px 12px rgba(0,0,0,.2);
     }
-    .hero p {
-      font-size: 1.15rem; color: rgba(255,255,255,.88);
-      margin-bottom: 36px;
-    }
+    .hero p { font-size: 1.15rem; color: rgba(255,255,255,.88); margin-bottom: 36px; }
     .hero-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .hero-btn-white {
       background: #fff; color: var(--purple-700);
@@ -219,58 +180,35 @@
       background: transparent; color: #fff;
       padding: 14px 32px; border-radius: var(--radius-xl);
       font-weight: 700; font-size: 1rem;
-      border: 2px solid rgba(255,255,255,.6); cursor: pointer;
-      transition: all .2s;
+      border: 2px solid rgba(255,255,255,.6); cursor: pointer; transition: all .2s;
     }
     .hero-btn-outline:hover { background: rgba(255,255,255,.15); }
 
-    /* STATS STRIP */
-    .stats-strip {
-      background: var(--white);
-      box-shadow: var(--shadow-md);
-    }
+    /* STATS */
+    .stats-strip { background: var(--white); box-shadow: var(--shadow-md); }
     .stats-inner {
-      max-width: 1100px; margin: 0 auto;
-      padding: 0 24px;
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
       display: grid; grid-template-columns: repeat(3, 1fr);
     }
-    .stat-item {
-      padding: 32px 24px;
-      text-align: center;
-      border-right: 1px solid var(--gray-100);
-    }
+    .stat-item { padding: 32px 24px; text-align: center; border-right: 1px solid var(--gray-100); }
     .stat-item:last-child { border-right: none; }
     .stat-emoji { font-size: 1.8rem; display: block; margin-bottom: 6px; }
-    .stat-number {
-      font-size: 2.2rem; font-weight: 900;
-      color: var(--purple-700);
-    }
+    .stat-number { font-size: 2.2rem; font-weight: 900; color: var(--purple-700); }
     .stat-label { font-size: .85rem; color: var(--gray-500); margin-top: 4px; }
 
-    /* POLICY PREVIEW CARDS */
+    /* CARDS */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
     }
     .policy-card {
-      background: var(--white);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      box-shadow: var(--shadow-sm);
-      border: 1px solid var(--gray-100);
-      cursor: pointer;
-      transition: all .2s;
+      background: var(--white); border-radius: var(--radius-md);
+      padding: 24px; box-shadow: var(--shadow-sm);
+      border: 1px solid var(--gray-100); cursor: pointer; transition: all .2s;
     }
-    .policy-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--purple-200);
-    }
-    .policy-card-title {
-      font-size: 1rem; font-weight: 700; color: var(--gray-800);
-      margin: 12px 0 8px;
-    }
+    .policy-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); border-color: var(--purple-200); }
+    .policy-card-title { font-size: 1rem; font-weight: 700; color: var(--gray-800); margin: 12px 0 8px; }
     .policy-card-summary {
       font-size: .88rem; color: var(--gray-500);
       display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
@@ -278,28 +216,20 @@
     }
     .policy-card-footer {
       display: flex; align-items: center; justify-content: space-between;
-      margin-top: 16px; padding-top: 14px;
-      border-top: 1px solid var(--gray-100);
+      margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--gray-100);
     }
     .vote-count { font-size: .88rem; font-weight: 600; color: var(--purple-600); }
 
-    /* CTA SECTION */
+    /* CTA */
     .cta-section {
       background: linear-gradient(135deg, var(--purple-50), #fdf2f8);
-      border-radius: var(--radius-xl);
-      padding: 64px 40px; text-align: center;
+      border-radius: var(--radius-xl); padding: 64px 40px; text-align: center;
       border: 1px solid var(--purple-100);
     }
-    .cta-section h2 {
-      font-size: 2rem; font-weight: 900; color: var(--purple-800);
-      margin-bottom: 12px;
-    }
+    .cta-section h2 { font-size: 2rem; font-weight: 900; color: var(--purple-800); margin-bottom: 12px; }
     .cta-section p { color: var(--gray-500); margin-bottom: 32px; font-size: 1rem; }
 
-    /* ============================================================
-       SUBMIT PAGE — FORM
-    ============================================================ */
-    .form-page { background: var(--gray-50); min-height: 100vh; }
+    /* SUBMIT PAGE */
     .form-header {
       background: linear-gradient(135deg, var(--purple-700), var(--purple-500));
       padding: 48px 24px 32px; text-align: center;
@@ -308,156 +238,29 @@
     .form-header p  { color: rgba(255,255,255,.85); font-size: 1rem; }
     .guide-box {
       background: linear-gradient(135deg, var(--purple-50), #fdf2f8);
-      border: 1px solid var(--purple-200);
-      border-radius: var(--radius-md);
-      padding: 22px 28px;
-      margin-bottom: 32px;
+      border: 1px solid var(--purple-200); border-radius: var(--radius-md);
+      padding: 22px 28px; margin-bottom: 32px;
     }
     .guide-box h3 { font-size: .95rem; font-weight: 700; color: var(--purple-700); margin-bottom: 10px; }
     .guide-box ul { padding-left: 18px; list-style: disc; }
     .guide-box ul li { font-size: .88rem; color: var(--gray-600); margin-bottom: 5px; }
-    .form-card {
-      background: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: var(--shadow-md);
+    .google-form-wrap {
+      background: var(--white); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-md);
       border: 1px solid var(--purple-100);
     }
-    .form-group { margin-bottom: 26px; }
-    .form-label {
-      display: block; font-size: .9rem; font-weight: 700;
-      color: var(--gray-700); margin-bottom: 8px;
-    }
-    .form-label .required {
-      color: var(--pink-500); margin-left: 4px;
-    }
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      padding: 13px 16px;
-      border: 2px solid var(--gray-200);
-      border-radius: var(--radius-sm);
-      font-size: .95rem; color: var(--gray-800);
-      transition: border-color .18s, box-shadow .18s;
-      background: var(--white);
-      outline: none;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--purple-400);
-      box-shadow: 0 0 0 3px rgba(139,92,246,.12);
-    }
-    .form-textarea { min-height: 120px; resize: vertical; }
-    .char-count { font-size: .78rem; color: var(--gray-400); text-align: right; margin-top: 4px; }
-    .checkbox-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-      gap: 10px;
-    }
-    .checkbox-item {
-      display: flex; align-items: center; gap: 8px;
-      padding: 10px 14px;
-      border: 2px solid var(--gray-200);
-      border-radius: var(--radius-sm); cursor: pointer;
-      transition: all .18s; font-size: .88rem;
-    }
-    .checkbox-item:hover { border-color: var(--purple-300); background: var(--purple-50); }
-    .checkbox-item input[type="checkbox"] { accent-color: var(--purple-600); width: 16px; height: 16px; }
-    .checkbox-item.checked { border-color: var(--purple-400); background: var(--purple-50); color: var(--purple-700); }
-    .form-divider { border: none; border-top: 1px solid var(--gray-100); margin: 30px 0; }
-    .anon-toggle {
-      display: flex; align-items: center; gap: 14px;
-      background: var(--gray-50); border-radius: var(--radius-sm);
-      padding: 16px 18px; border: 1px solid var(--gray-200);
-    }
-    .anon-toggle label { font-size: .9rem; color: var(--gray-600); cursor: pointer; }
-    .toggle-switch {
-      position: relative; width: 44px; height: 24px; flex-shrink: 0;
-    }
-    .toggle-switch input { opacity: 0; width: 0; height: 0; }
-    .toggle-slider {
-      position: absolute; inset: 0;
-      background: var(--gray-300); border-radius: 24px; cursor: pointer;
-      transition: .3s;
-    }
-    .toggle-slider::before {
-      content: '';
-      position: absolute; width: 18px; height: 18px;
-      left: 3px; top: 3px;
-      background: #fff; border-radius: 50%;
-      transition: .3s;
-    }
-    .toggle-switch input:checked + .toggle-slider { background: var(--purple-500); }
-    .toggle-switch input:checked + .toggle-slider::before { transform: translateX(20px); }
-    .submit-area { text-align: center; margin-top: 36px; }
-    .submit-btn {
-      background: linear-gradient(135deg, var(--purple-600), var(--pink-500));
-      color: #fff; padding: 16px 48px;
-      border-radius: var(--radius-xl); font-size: 1.05rem;
-      font-weight: 800; border: none; cursor: pointer;
-      box-shadow: 0 4px 16px rgba(124,58,237,.4);
-      transition: all .2s; width: 100%;
-    }
-    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(124,58,237,.5); }
+    .google-form-wrap iframe { display: block; width: 100%; border: none; }
 
-    /* SUCCESS MODAL */
-    .modal-overlay {
-      display: none; position: fixed; inset: 0;
-      background: rgba(0,0,0,.5); backdrop-filter: blur(4px);
-      z-index: 9999; align-items: center; justify-content: center;
-    }
-    .modal-overlay.open { display: flex; }
-    .modal-box {
-      background: var(--white); border-radius: var(--radius-lg);
-      padding: 48px 40px; text-align: center;
-      max-width: 420px; width: 90%;
-      box-shadow: 0 20px 60px rgba(0,0,0,.2);
-      animation: slideUp .3s ease;
-    }
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .modal-emoji { font-size: 4rem; display: block; margin-bottom: 16px; }
-    .modal-box h2 { font-size: 1.5rem; font-weight: 900; color: var(--purple-700); margin-bottom: 10px; }
-    .modal-box p  { color: var(--gray-500); font-size: .95rem; margin-bottom: 28px; }
-
-    /* TALLY EMBED NOTICE */
-    .tally-notice {
-      background: linear-gradient(135deg, #f5f3ff, #fdf2f8);
-      border: 2px dashed var(--purple-300);
-      border-radius: var(--radius-md);
-      padding: 32px; text-align: center; margin: 24px 0;
-    }
-    .tally-notice h3 { color: var(--purple-700); font-size: 1.05rem; margin-bottom: 8px; }
-    .tally-notice p  { color: var(--gray-500); font-size: .9rem; }
-    .tally-embed-area {
-      background: var(--white); border-radius: var(--radius-sm);
-      border: 1px solid var(--gray-200);
-      min-height: 400px; display: flex; align-items: center; justify-content: center;
-      margin-top: 16px;
-      font-size: .9rem; color: var(--gray-400);
-    }
-
-    /* ============================================================
-       LIST PAGE
-    ============================================================ */
-    .filter-bar {
-      display: flex; gap: 12px; flex-wrap: wrap; align-items: center;
-      margin-bottom: 28px;
-    }
-    .search-wrap {
-      flex: 1; min-width: 200px; position: relative;
-    }
+    /* LIST PAGE */
+    .filter-bar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 28px; }
+    .search-wrap { flex: 1; min-width: 200px; position: relative; }
     .search-wrap input {
       width: 100%; padding: 11px 16px 11px 42px;
-      border: 2px solid var(--gray-200);
-      border-radius: var(--radius-xl); font-size: .9rem;
-      outline: none; transition: border-color .18s;
+      border: 2px solid var(--gray-200); border-radius: var(--radius-xl);
+      font-size: .9rem; outline: none; transition: border-color .18s;
     }
     .search-wrap input:focus { border-color: var(--purple-400); }
-    .search-icon {
-      position: absolute; left: 14px; top: 50%;
-      transform: translateY(-50%); font-size: 1rem;
-      pointer-events: none;
-    }
+    .search-icon { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); font-size: 1rem; pointer-events: none; }
     .filter-select, .sort-select {
       padding: 11px 16px; border: 2px solid var(--gray-200);
       border-radius: var(--radius-xl); font-size: .88rem;
@@ -465,9 +268,7 @@
       transition: border-color .18s; color: var(--gray-700);
     }
     .filter-select:focus, .sort-select:focus { border-color: var(--purple-400); }
-    .pagination {
-      display: flex; justify-content: center; gap: 8px; margin-top: 40px;
-    }
+    .pagination { display: flex; justify-content: center; gap: 8px; margin-top: 40px; }
     .page-btn {
       width: 38px; height: 38px; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -475,13 +276,9 @@
       font-size: .88rem; font-weight: 600; color: var(--gray-600);
       transition: all .18s; background: var(--white);
     }
-    .page-btn.active, .page-btn:hover {
-      background: var(--purple-600); color: #fff; border-color: var(--purple-600);
-    }
+    .page-btn.active, .page-btn:hover { background: var(--purple-600); color: #fff; border-color: var(--purple-600); }
 
-    /* ============================================================
-       DETAIL PAGE
-    ============================================================ */
+    /* DETAIL PAGE */
     .detail-hero {
       background: linear-gradient(135deg, var(--purple-700), var(--purple-500));
       padding: 48px 24px 40px;
@@ -495,33 +292,18 @@
       padding: 32px; margin-bottom: 20px;
       box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);
     }
-    .content-section h3 {
-      font-size: 1rem; font-weight: 700; color: var(--purple-700);
-      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
-    }
+    .content-section h3 { font-size: 1rem; font-weight: 700; color: var(--purple-700); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
     .content-section p { font-size: .95rem; color: var(--gray-600); line-height: 1.75; }
     .vote-card {
       background: linear-gradient(135deg, var(--purple-50), #fdf2f8);
-      border: 2px solid var(--purple-200);
-      border-radius: var(--radius-lg);
-      padding: 36px; text-align: center;
-      margin-bottom: 20px;
+      border: 2px solid var(--purple-200); border-radius: var(--radius-lg);
+      padding: 36px; text-align: center; margin-bottom: 20px;
     }
     .vote-card h3 { font-size: 1.05rem; font-weight: 700; color: var(--purple-800); margin-bottom: 8px; }
-    .vote-big-number {
-      font-size: 3.5rem; font-weight: 900;
-      color: var(--purple-700); line-height: 1;
-      margin: 16px 0;
-    }
+    .vote-big-number { font-size: 3.5rem; font-weight: 900; color: var(--purple-700); line-height: 1; margin: 16px 0; transition: transform .3s; }
     .vote-big-number span { font-size: 1rem; font-weight: 500; color: var(--gray-500); }
-    .vote-bar-wrap {
-      background: var(--gray-100); border-radius: 8px; height: 10px; margin: 16px 0;
-    }
-    .vote-bar {
-      height: 100%; border-radius: 8px;
-      background: linear-gradient(90deg, var(--purple-500), var(--pink-400));
-      transition: width .6s ease;
-    }
+    .vote-bar-wrap { background: var(--gray-100); border-radius: 8px; height: 10px; margin: 16px 0; }
+    .vote-bar { height: 100%; border-radius: 8px; background: linear-gradient(90deg, var(--purple-500), var(--pink-400)); transition: width .6s ease; }
     .share-card {
       background: var(--white); border-radius: var(--radius-md);
       padding: 24px; box-shadow: var(--shadow-sm);
@@ -529,56 +311,36 @@
     }
     .share-card h3 { font-size: .95rem; font-weight: 700; color: var(--gray-700); margin-bottom: 14px; }
     .share-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-    .share-btn {
-      padding: 10px 20px; border-radius: 30px; font-size: .88rem;
-      font-weight: 600; border: none; cursor: pointer; transition: all .18s;
-    }
+    .share-btn { padding: 10px 20px; border-radius: 30px; font-size: .88rem; font-weight: 600; border: none; cursor: pointer; transition: all .18s; }
     .share-kakao { background: #fee500; color: #3c1e1e; }
     .share-kakao:hover { background: #fad400; }
     .share-link { background: var(--purple-100); color: var(--purple-700); }
     .share-link:hover { background: var(--purple-200); }
 
-    /* ============================================================
-       RESULTS PAGE
-    ============================================================ */
-    .results-hero {
-      background: linear-gradient(135deg, var(--purple-700), var(--pink-500));
-      padding: 56px 24px 40px; text-align: center;
-    }
+    /* RESULTS PAGE */
+    .results-hero { background: linear-gradient(135deg, var(--purple-700), var(--pink-500)); padding: 56px 24px 40px; text-align: center; }
     .results-hero h1 { font-size: 2.2rem; font-weight: 900; color: #fff; }
     .results-hero p  { color: rgba(255,255,255,.8); margin-top: 8px; font-size: 1rem; }
-    .top3-grid {
-      display: grid; grid-template-columns: 1fr 1.1fr 1fr;
-      gap: 16px; margin-bottom: 40px; align-items: end;
-    }
-    @media (max-width: 640px) {
-      .top3-grid { grid-template-columns: 1fr; }
-    }
+    .top3-grid { display: grid; grid-template-columns: 1fr 1.1fr 1fr; gap: 16px; margin-bottom: 40px; align-items: end; }
     .top-card {
       background: var(--white); border-radius: var(--radius-md);
       padding: 28px 20px; text-align: center;
-      box-shadow: var(--shadow-md);
-      transition: all .2s; cursor: pointer;
+      box-shadow: var(--shadow-md); transition: all .2s; cursor: pointer;
     }
     .top-card:hover { transform: translateY(-3px); }
-    .top-card-1 {
-      border: 2px solid #fbbf24; order: 2;
-    }
+    .top-card-1 { border: 2px solid #fbbf24; order: 2; }
     .top-card-2 { border: 1px solid var(--gray-200); order: 1; }
     .top-card-3 { border: 1px solid var(--gray-200); order: 3; }
     .top-rank-emoji { font-size: 2.8rem; display: block; margin-bottom: 8px; }
     .top-card-title { font-weight: 700; font-size: .95rem; color: var(--gray-800); margin-bottom: 8px; }
-    .top-card-votes {
-      font-size: 1.6rem; font-weight: 900; color: var(--purple-700);
-    }
+    .top-card-votes { font-size: 1.6rem; font-weight: 900; color: var(--purple-700); }
     .top-card-votes span { font-size: .8rem; font-weight: 500; color: var(--gray-500); }
     .result-list { display: flex; flex-direction: column; gap: 14px; }
     .result-item {
       background: var(--white); border-radius: var(--radius-md);
       padding: 20px 24px; display: flex; align-items: center;
       gap: 18px; box-shadow: var(--shadow-sm);
-      border: 1px solid var(--gray-100);
-      cursor: pointer; transition: all .2s;
+      border: 1px solid var(--gray-100); cursor: pointer; transition: all .2s;
     }
     .result-item:hover { border-color: var(--purple-200); box-shadow: var(--shadow-md); }
     .result-info { flex: 1; }
@@ -586,122 +348,58 @@
     .result-meta { font-size: .82rem; color: var(--gray-400); }
     .result-votes { font-size: 1.3rem; font-weight: 900; color: var(--purple-600); white-space: nowrap; }
     .category-section { margin-top: 60px; }
-    .category-tabs {
-      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px;
-    }
+    .category-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
     .cat-tab {
       padding: 8px 18px; border-radius: 30px;
       border: 2px solid var(--gray-200); cursor: pointer;
       font-size: .88rem; font-weight: 600; color: var(--gray-600);
       transition: all .18s; background: var(--white);
     }
-    .cat-tab.active, .cat-tab:hover {
-      background: var(--purple-600); color: #fff; border-color: var(--purple-600);
-    }
+    .cat-tab.active, .cat-tab:hover { background: var(--purple-600); color: #fff; border-color: var(--purple-600); }
 
-    /* ============================================================
-       ABOUT PAGE
-    ============================================================ */
-    .about-hero {
-      background: linear-gradient(135deg, var(--purple-800), var(--purple-600));
-      padding: 60px 24px 48px; text-align: center;
-    }
+    /* ABOUT PAGE */
+    .about-hero { background: linear-gradient(135deg, var(--purple-800), var(--purple-600)); padding: 60px 24px 48px; text-align: center; }
     .about-hero h1 { font-size: 2rem; font-weight: 900; color: #fff; margin-bottom: 12px; }
     .about-hero p  { color: rgba(255,255,255,.8); font-size: 1rem; max-width: 560px; margin: 0 auto; }
-    .about-card {
-      background: var(--white); border-radius: var(--radius-md);
-      padding: 32px; margin-bottom: 20px;
-      box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100);
-    }
-    .about-card h2 {
-      font-size: 1.15rem; font-weight: 800; color: var(--purple-700);
-      margin-bottom: 14px; display: flex; align-items: center; gap: 8px;
-    }
+    .about-card { background: var(--white); border-radius: var(--radius-md); padding: 32px; margin-bottom: 20px; box-shadow: var(--shadow-sm); border: 1px solid var(--gray-100); }
+    .about-card h2 { font-size: 1.15rem; font-weight: 800; color: var(--purple-700); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
     .about-card p { font-size: .93rem; color: var(--gray-600); line-height: 1.8; }
-    .steps-list { counter-reset: steps; display: flex; flex-direction: column; gap: 14px; }
-    .step-item {
-      display: flex; gap: 16px; align-items: flex-start;
-      padding: 16px; background: var(--purple-50); border-radius: var(--radius-sm);
-    }
-    .step-num {
-      background: var(--purple-600); color: #fff;
-      width: 30px; height: 30px; border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-weight: 800; font-size: .85rem; flex-shrink: 0;
-    }
+    .steps-list { display: flex; flex-direction: column; gap: 14px; }
+    .step-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px; background: var(--purple-50); border-radius: var(--radius-sm); }
+    .step-num { background: var(--purple-600); color: #fff; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: .85rem; flex-shrink: 0; }
     .step-text h4 { font-size: .92rem; font-weight: 700; color: var(--gray-800); margin-bottom: 3px; }
     .step-text p  { font-size: .85rem; color: var(--gray-500); }
-    .contact-item {
-      display: flex; align-items: center; gap: 12px;
-      padding: 14px 0; border-bottom: 1px solid var(--gray-100);
-      font-size: .9rem; color: var(--gray-600);
-    }
+    .contact-item { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--gray-100); font-size: .9rem; color: var(--gray-600); }
     .contact-item:last-child { border-bottom: none; }
     .contact-item .icon { font-size: 1.3rem; }
 
-    /* ============================================================
-       FOOTER
-    ============================================================ */
-    .site-footer {
-      background: var(--gray-800);
-      padding: 40px 24px;
-      margin-top: 60px;
-    }
-    .footer-inner {
-      max-width: 1100px; margin: 0 auto;
-      display: flex; flex-wrap: wrap; gap: 32px;
-      justify-content: space-between; align-items: flex-start;
-    }
+    /* FOOTER */
+    .site-footer { background: var(--gray-800); padding: 40px 24px; margin-top: 60px; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 32px; justify-content: space-between; align-items: flex-start; }
     .footer-brand .logo { font-size: 1.1rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
     .footer-brand p { font-size: .82rem; color: var(--gray-400); }
     .footer-links h4 { font-size: .85rem; font-weight: 700; color: var(--gray-300); margin-bottom: 10px; }
-    .footer-links a {
-      display: block; font-size: .82rem; color: var(--gray-400);
-      cursor: pointer; margin-bottom: 6px; transition: color .18s;
-    }
+    .footer-links a { display: block; font-size: .82rem; color: var(--gray-400); cursor: pointer; margin-bottom: 6px; transition: color .18s; }
     .footer-links a:hover { color: var(--purple-300); }
-    .footer-bottom {
-      max-width: 1100px; margin: 24px auto 0;
-      padding-top: 20px; border-top: 1px solid var(--gray-700);
-      font-size: .8rem; color: var(--gray-500); text-align: center;
-    }
+    .footer-bottom { max-width: 1100px; margin: 24px auto 0; padding-top: 20px; border-top: 1px solid var(--gray-700); font-size: .8rem; color: var(--gray-500); text-align: center; }
 
-    /* ============================================================
-       RESPONSIVE
-    ============================================================ */
+    /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero h1 { font-size: 1.9rem; }
       .stats-inner { grid-template-columns: 1fr; }
       .stat-item { border-right: none; border-bottom: 1px solid var(--gray-100); }
       .nav-links { display: none; }
-      .form-card { padding: 24px 18px; }
       .top3-grid { grid-template-columns: 1fr; }
     }
 
-    /* ============================================================
-       ANIMATIONS
-    ============================================================ */
-    .fade-in {
-      animation: fadeIn .4s ease;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    .pulse {
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: .7; }
-    }
+    /* ANIMATIONS */
+    .fade-in { animation: fadeIn .4s ease; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
-<!-- ================================================================
-     HEADER
-================================================================ -->
+<!-- HEADER -->
 <header class="site-header">
   <nav class="nav-inner">
     <div class="nav-logo" onclick="showPage('home')">
@@ -718,22 +416,9 @@
 </header>
 
 <!-- ================================================================
-     SUCCESS MODAL
-================================================================ -->
-<div class="modal-overlay" id="successModal">
-  <div class="modal-box">
-    <span class="modal-emoji">🎉</span>
-    <h2>제안이 등록되었어요!</h2>
-    <p>소중한 정책 제안을 보내주셨어요.<br>함께 더 나은 세상을 만들어가요 💜</p>
-    <button class="btn btn-primary" onclick="closeModal()">정책 리스트 보러가기 →</button>
-  </div>
-</div>
-
-<!-- ================================================================
      PAGE: HOME
 ================================================================ -->
 <div class="page active" id="page-home">
-  <!-- Hero -->
   <section class="hero">
     <div class="hero-inner fade-in">
       <span class="hero-emoji">💜</span>
@@ -746,28 +431,26 @@
     </div>
   </section>
 
-  <!-- Stats Strip -->
   <div class="stats-strip">
     <div class="stats-inner">
       <div class="stat-item">
         <span class="stat-emoji">👥</span>
-        <div class="stat-number" id="stat-participants">1,284</div>
+        <div class="stat-number" id="stat-participants">0</div>
         <div class="stat-label">참여자 수</div>
       </div>
       <div class="stat-item">
         <span class="stat-emoji">📜</span>
-        <div class="stat-number" id="stat-policies">237</div>
+        <div class="stat-number" id="stat-policies">0</div>
         <div class="stat-label">등록된 정책</div>
       </div>
       <div class="stat-item">
         <span class="stat-emoji">🗳️</span>
-        <div class="stat-number" id="stat-votes">4,891</div>
+        <div class="stat-number" id="stat-votes">0</div>
         <div class="stat-label">누적 투표 수</div>
       </div>
     </div>
   </div>
 
-  <!-- Policy Preview -->
   <section class="section" style="background: var(--white);">
     <div class="section-wide fade-in">
       <p class="section-subtitle">✨ 지금 주목받는 정책들</p>
@@ -776,7 +459,6 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section class="section">
     <div class="section-wide">
       <div class="cta-section fade-in">
@@ -788,11 +470,10 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="logo">💜 여성정책 플랫폼</div>
+        <div class="logo">💜 인천 여성정책 플랫폼</div>
         <p>여성의 목소리로 만드는 더 나은 정책</p>
       </div>
       <div class="footer-links">
@@ -803,8 +484,8 @@
       </div>
       <div class="footer-links">
         <h4>문의</h4>
-        <a>📧 policy@example.kr</a>
-        <a>💬 오픈카카오 채널</a>
+        <a>📧 icnminwoo@gmail.com</a>
+        <a>💬 카카오채널: 인천여성민우회</a>
       </div>
     </div>
     <div class="footer-bottom">© 2026 인천 여성정책 플랫폼. 모든 제안은 익명으로 보호됩니다 💜</div>
@@ -812,7 +493,7 @@
 </div>
 
 <!-- ================================================================
-     PAGE: SUBMIT (Tally-style form)
+     PAGE: SUBMIT — 구글폼만 표시 (자체폼 삭제)
 ================================================================ -->
 <div class="page" id="page-submit">
   <div class="form-header">
@@ -823,7 +504,7 @@
   <section class="section">
     <div class="section-narrow fade-in">
 
-      <!-- Guide Box -->
+      <!-- 작성 가이드 -->
       <div class="guide-box">
         <h3>💡 좋은 정책 제안 이렇게 써요!</h3>
         <ul>
@@ -834,113 +515,28 @@
         </ul>
       </div>
 
-      <!-- Form Card -->
-      <div class="form-card">
-        <form id="policyForm" onsubmit="handleSubmit(event)">
-
-          <!-- 제목 -->
-          <div class="form-group">
-            <label class="form-label">📌 정책 제목 <span class="required">*</span></label>
-            <input type="text" class="form-input" id="f-title"
-              placeholder="예: 직장맘을 위한 유연근무제 확대"
-              maxlength="60" required
-              oninput="updateChar('f-title','char-title', 60)">
-            <div class="char-count"><span id="char-title">0</span>/60</div>
-          </div>
-
-          <!-- 분야 -->
-          <div class="form-group">
-            <label class="form-label">🏷️ 정책 분야 <span class="required">*</span></label>
-            <select class="form-select" id="f-category" required>
-              <option value="" disabled selected>분야를 선택해주세요</option>
-              <option>👶 돌봄·육아</option>
-              <option>🛡️ 안전·폭력예방</option>
-              <option>💼 노동·경력</option>
-              <option>🏥 건강·의료</option>
-              <option>🎓 교육·훈련</option>
-              <option>🏠 주거·생활</option>
-              <option>💰 경제·복지</option>
-              <option>🌍 기타</option>
-            </select>
-          </div>
-
-          <!-- 문제 상황 -->
-          <div class="form-group">
-            <label class="form-label">🔍 문제 상황 <span class="required">*</span></label>
-            <textarea class="form-textarea" id="f-problem"
-              placeholder="어떤 불편함이나 문제를 겪으셨나요? 직접 경험하신 이야기를 들려주세요."
-              minlength="30" required
-              oninput="updateChar('f-problem','char-problem', 500)"></textarea>
-            <div class="char-count"><span id="char-problem">0</span>/500 (최소 30자)</div>
-          </div>
-
-          <!-- 제안 내용 -->
-          <div class="form-group">
-            <label class="form-label">💡 제안 내용 <span class="required">*</span></label>
-            <textarea class="form-textarea" id="f-solution"
-              placeholder="어떻게 바뀌면 좋을까요? 구체적인 정책 방향을 제안해주세요."
-              minlength="30" required
-              oninput="updateChar('f-solution','char-solution', 500)"></textarea>
-            <div class="char-count"><span id="char-solution">0</span>/500 (최소 30자)</div>
-          </div>
-
-          <!-- 기대 효과 -->
-          <div class="form-group">
-            <label class="form-label">🌟 기대 효과</label>
-            <textarea class="form-textarea" id="f-effect"
-              placeholder="이 정책이 실현되면 어떤 변화가 생길까요? (선택사항)"
-              oninput="updateChar('f-effect','char-effect', 300)"></textarea>
-            <div class="char-count"><span id="char-effect">0</span>/300</div>
-          </div>
-
-          <hr class="form-divider">
-
-          <!-- 대상 -->
-          <div class="form-group">
-            <label class="form-label">👩 정책 대상 (복수 선택 가능)</label>
-            <div class="checkbox-grid">
-              <label class="checkbox-item"><input type="checkbox"> 👶 영유아 가정</label>
-              <label class="checkbox-item"><input type="checkbox"> 👩‍💼 직장 여성</label>
-              <label class="checkbox-item"><input type="checkbox"> 👩‍🎓 청년 여성</label>
-              <label class="checkbox-item"><input type="checkbox"> 👵 중장년 여성</label>
-              <label class="checkbox-item"><input type="checkbox"> 🤰 임산부</label>
-              <label class="checkbox-item"><input type="checkbox"> 🏠 1인 가구</label>
-              <label class="checkbox-item"><input type="checkbox"> 👩‍👧 한부모 가정</label>
-              <label class="checkbox-item"><input type="checkbox"> 🌍 전체 여성</label>
-            </div>
-          </div>
-
-          <hr class="form-divider">
-
-          <!-- 익명 여부 -->
-          <div class="form-group">
-            <label class="form-label">🔒 제출 방식</label>
-            <div class="anon-toggle">
-              <label class="toggle-switch">
-                <input type="checkbox" id="f-anon" checked>
-                <span class="toggle-slider"></span>
-              </label>
-              <label for="f-anon">익명으로 제출하기 — 개인정보가 일절 수집되지 않아요 🛡️</label>
-            </div>
-          </div>
-
-          <!-- Submit -->
-          <div class="submit-area">
-            <button type="submit" class="submit-btn">
-              💜 정책 제안 제출하기
-            </button>
-            <p style="margin-top:12px; font-size:.82rem; color:var(--gray-400)">
-              📋 제출된 정책은 검토 후 플랫폼에 공개됩니다
-            </p>
-          </div>
-        </form>
+      <!-- 구글폼 임베드 -->
+      <div class="google-form-wrap">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLScbLHItJM0ABUJcyMNNbKXbcDdTQ9MLS26wEyeupmvsVSC9qQ/viewform?embedded=true"
+          width="100%" height="1685" frameborder="0" marginheight="0" marginwidth="0">
+          로드 중…
+        </iframe>
       </div>
 
-      <!-- Tally Embed Notice -->
-      <div class="tally-notice" style="margin-top: 32px;">
-        <h3>🔗 Google form 임베드 안내</h3>
-        <p>실제 데이터 수집 시 아래 영역에 폼 코드를 삽입하세요.</p>
-       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScbLHItJM0ABUJcyMNNbKXbcDdTQ9MLS26wEyeupmvsVSC9qQ/viewform?embedded=true" width="640" height="1685" frameborder="0" marginheight="0" marginwidth="0">로드 중…</iframe>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">💜 인천 여성정책 플랫폼</div>
+        <p>여성의 목소리로 만드는 더 나은 정책</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 인천 여성정책 플랫폼 💜</div>
+  </footer>
+</div>
 
 <!-- ================================================================
      PAGE: LIST
@@ -955,12 +551,10 @@
 
   <section class="section" style="padding-top: 36px;">
     <div class="section-wide fade-in">
-      <!-- Filter Bar -->
       <div class="filter-bar">
         <div class="search-wrap">
           <span class="search-icon">🔍</span>
-          <input type="text" id="searchInput" placeholder="키워드로 검색해보세요..."
-            oninput="filterPolicies()">
+          <input type="text" id="searchInput" placeholder="키워드로 검색해보세요..." oninput="filterPolicies()">
         </div>
         <select class="filter-select" id="categoryFilter" onchange="filterPolicies()">
           <option value="">🏷️ 전체 분야</option>
@@ -977,11 +571,7 @@
           <option value="popular">🔥 인기순</option>
         </select>
       </div>
-
-      <!-- Cards -->
       <div class="cards-grid" id="list-cards"></div>
-
-      <!-- Pagination -->
       <div class="pagination">
         <div class="page-btn active">1</div>
         <div class="page-btn">2</div>
@@ -1008,11 +598,10 @@
 <div class="page" id="page-detail">
   <div class="detail-hero">
     <div class="detail-hero-inner">
-      <span id="detail-tag" class="tag tag-purple">💼 노동·경력</span>
-      <h1 id="detail-title">정책 제목이 여기에 표시됩니다</h1>
+      <span id="detail-tag" class="tag tag-purple"></span>
+      <h1 id="detail-title"></h1>
       <div class="detail-meta">
-        <span>📅 2026.03.20</span>
-        <span>👁️ 조회 1,234</span>
+        <span id="detail-date">📅</span>
         <span>🔒 익명 제안</span>
       </div>
     </div>
@@ -1020,29 +609,26 @@
 
   <section class="section" style="padding-top: 36px;">
     <div class="section-narrow fade-in">
-
       <div class="content-section">
         <h3>🔍 문제 상황</h3>
-        <p id="detail-problem">정책의 문제 상황 내용이 여기에 표시됩니다. 실제 제안 데이터 연동 시 채워집니다.</p>
+        <p id="detail-problem"></p>
       </div>
-
       <div class="content-section">
         <h3>💡 제안 내용</h3>
-        <p id="detail-solution">정책의 제안 내용이 여기에 표시됩니다.</p>
+        <p id="detail-solution"></p>
       </div>
-
       <div class="content-section">
         <h3>🌟 기대 효과</h3>
-        <p id="detail-effect">정책의 기대 효과가 여기에 표시됩니다.</p>
+        <p id="detail-effect"></p>
       </div>
 
-      <!-- Vote Card -->
+      <!-- 투표 -->
       <div class="vote-card">
         <h3>🗳️ 이 정책에 투표하세요!</h3>
         <p style="color:var(--gray-500); font-size:.9rem;">공감되셨다면 투표로 지지해주세요</p>
-        <div class="vote-big-number" id="detail-votes">132 <span>표</span></div>
+        <div class="vote-big-number" id="detail-votes">0 <span>표</span></div>
         <div class="vote-bar-wrap">
-          <div class="vote-bar" id="detail-vote-bar" style="width:66%"></div>
+          <div class="vote-bar" id="detail-vote-bar" style="width:0%"></div>
         </div>
         <button class="btn-vote" id="voteBtn" onclick="handleVote()">
           👍 이 정책에 투표하기
@@ -1052,33 +638,24 @@
         </p>
       </div>
 
-      <!-- Share -->
+      <!-- 공유 -->
       <div class="share-card">
         <h3>📢 이 정책 공유하기</h3>
         <div class="share-buttons">
-          <button class="share-btn share-kakao" onclick="alert('카카오로 공유됩니다 🟡')">
-            💛 카카오로 공유
-          </button>
-          <button class="share-btn share-link" onclick="copyLink()">
-            🔗 링크 복사
-          </button>
+          <button class="share-btn share-kakao" onclick="alert('카카오로 공유됩니다 🟡')">💛 카카오로 공유</button>
+          <button class="share-btn share-link" onclick="copyLink()">🔗 링크 복사</button>
         </div>
       </div>
 
       <div style="text-align:center; margin-top:24px;">
-        <button class="btn btn-secondary" onclick="showPage('list')">
-          ← 목록으로 돌아가기
-        </button>
+        <button class="btn btn-secondary" onclick="showPage('list')">← 목록으로 돌아가기</button>
       </div>
-
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">💜 인천 여성정책 플랫폼</div>
-      </div>
+      <div class="footer-brand"><div class="logo">💜 인천 여성정책 플랫폼</div></div>
     </div>
     <div class="footer-bottom">© 2026 인천 여성정책 플랫폼 💜</div>
   </footer>
@@ -1095,16 +672,10 @@
 
   <section class="section" style="padding-top: 48px;">
     <div class="section-wide fade-in">
-
-      <!-- TOP 3 -->
       <p class="section-subtitle" style="text-align:center">🥇🥈🥉 TOP 3 정책</p>
       <div class="top3-grid" id="top3-cards"></div>
-
-      <!-- Full Result List -->
       <h2 class="section-title">📊 전체 순위</h2>
       <div class="result-list" id="result-list"></div>
-
-      <!-- Category Section -->
       <div class="category-section">
         <h2 class="section-title">🏷️ 분야별 우수 정책</h2>
         <div class="category-tabs">
@@ -1117,15 +688,12 @@
         </div>
         <div class="result-list" id="cat-result-list"></div>
       </div>
-
     </div>
   </section>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">💜 인천 여성정책 플랫폼</div>
-      </div>
+      <div class="footer-brand"><div class="logo">💜 인천 여성정책 플랫폼</div></div>
     </div>
     <div class="footer-bottom">© 2026 인천 여성정책 플랫폼 💜</div>
   </footer>
@@ -1142,89 +710,36 @@
 
   <section class="section">
     <div class="section-narrow fade-in">
-
       <div class="about-card">
         <h2>🎯 프로젝트 목적</h2>
-        <p>
-          인천 여성정책 플랫폼은 일상에서 겪는 여성들의 어려움을 정책 언어로 전환하는 시민 참여 플랫폼입니다.
-          제도적 접근의 장벽을 낮추고, 누구나 쉽게 정책 아이디어를 제안하고 지지할 수 있는
-          민주적 공간을 지향합니다 💜
-        </p>
+        <p>인천 여성정책 플랫폼은 일상에서 겪는 여성들의 어려움을 정책 언어로 전환하는 시민 참여 플랫폼입니다. 제도적 접근의 장벽을 낮추고, 누구나 쉽게 정책 아이디어를 제안하고 지지할 수 있는 민주적 공간을 지향합니다 💜</p>
       </div>
-
       <div class="about-card">
         <h2>📖 배경</h2>
-        <p>
-          정책 참여는 여전히 소수의 전문가와 대표자에게 집중되어 있습니다.
-          그러나 정책의 당사자는 바로 일상을 살아가는 여성들입니다.
-          이 플랫폼은 그 목소리를 모아 정책 수립 과정에 실질적인 영향을 미치기 위해 탄생했습니다.
-        </p>
+        <p>정책 참여는 여전히 소수의 전문가와 대표자에게 집중되어 있습니다. 그러나 정책의 당사자는 바로 일상을 살아가는 여성들입니다. 이 플랫폼은 그 목소리를 모아 정책 수립 과정에 실질적인 영향을 미치기 위해 탄생했습니다.</p>
       </div>
-
       <div class="about-card">
         <h2>🚀 참여 방법</h2>
         <div class="steps-list">
-          <div class="step-item">
-            <div class="step-num">1</div>
-            <div class="step-text">
-              <h4>✍️ 정책 제안</h4>
-              <p>경험한 문제와 해결 방향을 자유롭게 작성해요. 로그인 없이, 3분이면 충분해요!</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">2</div>
-            <div class="step-text">
-              <h4>🗳️ 투표 참여</h4>
-              <p>다른 분들의 제안을 읽고 공감되는 정책에 투표하세요. 1인 1표!</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">3</div>
-            <div class="step-text">
-              <h4>📢 공유하기</h4>
-              <p>좋은 정책 아이디어를 주변에 공유해서 더 많은 지지를 모아주세요!</p>
-            </div>
-          </div>
-          <div class="step-item">
-            <div class="step-num">4</div>
-            <div class="step-text">
-              <h4>🏆 결과 확인</h4>
-              <p>투표 결과는 실시간으로 공개되며, 우수 제안은 정책 제안 보고서에 수록됩니다.</p>
-            </div>
-          </div>
+          <div class="step-item"><div class="step-num">1</div><div class="step-text"><h4>✍️ 정책 제안</h4><p>경험한 문제와 해결 방향을 자유롭게 작성해요. 로그인 없이, 3분이면 충분해요!</p></div></div>
+          <div class="step-item"><div class="step-num">2</div><div class="step-text"><h4>🗳️ 투표 참여</h4><p>다른 분들의 제안을 읽고 공감되는 정책에 투표하세요. 1인 1표!</p></div></div>
+          <div class="step-item"><div class="step-num">3</div><div class="step-text"><h4>📢 공유하기</h4><p>좋은 정책 아이디어를 주변에 공유해서 더 많은 지지를 모아주세요!</p></div></div>
+          <div class="step-item"><div class="step-num">4</div><div class="step-text"><h4>🏆 결과 확인</h4><p>투표 결과는 실시간으로 공개되며, 우수 제안은 정책 제안 보고서에 수록됩니다.</p></div></div>
         </div>
       </div>
-
       <div class="about-card">
         <h2>🏢 운영 주체</h2>
-        <p>
-          본 플랫폼은 인천여성민우회가 운영합니다.
-          수집된 정책 제안은 관련 기관 및 정책 담당자에게 공식 전달됩니다.
-        </p>
+        <p>본 플랫폼은 인천여성민우회가 운영합니다. 수집된 정책 제안은 관련 기관 및 정책 담당자에게 공식 전달됩니다.</p>
       </div>
-
       <div class="about-card">
         <h2>📬 문의하기</h2>
         <div>
-          <div class="contact-item">
-            <span class="icon">📧</span>
-            <span>이메일: icnminwoo@gmail.com</span>
-          </div>
-          <div class="contact-item">
-            <span class="icon">💬</span>
-            <span>카카오 채널: 인천여성민우회</span>
-          </div>
-          <div class="contact-item">
-            <span class="icon">📱</span>
-            <span>인스타그램: @in_minwoo</span>
-          </div>
-          <div class="contact-item">
-            <span class="icon">🔒</span>
-            <span>개인정보처리방침 · 이용약관</span>
-          </div>
+          <div class="contact-item"><span class="icon">📧</span><span>이메일: icnminwoo@gmail.com</span></div>
+          <div class="contact-item"><span class="icon">💬</span><span>카카오 채널: 인천여성민우회</span></div>
+          <div class="contact-item"><span class="icon">📱</span><span>인스타그램: @in_minwoo</span></div>
+          <div class="contact-item"><span class="icon">🔒</span><span>개인정보처리방침 · 이용약관</span></div>
         </div>
       </div>
-
     </div>
   </section>
 
@@ -1239,88 +754,84 @@
   </footer>
 </div>
 
-
 <!-- ================================================================
      JAVASCRIPT
 ================================================================ -->
 <script>
 // ============================================================
-// SAMPLE DATA
+// 데이터
 // ============================================================
 const policies = [
-  {
-    id: 1,
-    title: "직장맘을 위한 유연근무제 전면 확대",
-    category: "💼 노동·경력",
+  { id: 1, title: "직장맘을 위한 유연근무제 전면 확대", category: "💼 노동·경력",
     summary: "육아와 직장을 병행하는 여성들이 눈치 없이 재택·시차출근을 사용할 수 있도록 제도적 의무화가 필요합니다.",
     problem: "현재 유연근무제는 제도는 있으나 실제 사용률이 매우 낮습니다. 특히 중소기업 재직 여성들은 '눈치'로 인해 제도를 활용하지 못하고 있으며, 이는 결국 경력단절로 이어집니다.",
     solution: "50인 이상 사업장에 유연근무제 사용률 30% 이상 의무화, 사용률 공시제도 도입, 중소기업 지원금 확대를 제안합니다.",
     effect: "여성의 경력단절 감소, 일·가정 양립 실현, 기업 생산성 향상 및 저출생 문제 완화에 기여할 것입니다.",
-    votes: 10,
-    date: "2026.03.18",
-    tagClass: "tag-purple"
-  },
-  {
-    id: 2,
-    title: "공동육아 인프라 확충 및 돌봄 공백 해소",
-    category: "👶 돌봄·육아",
+    votes: 0, date: "2026.03.18", tagClass: "tag-purple" },
+  { id: 2, title: "공동육아 인프라 확충 및 돌봄 공백 해소", category: "👶 돌봄·육아",
     summary: "방과 후부터 저녁까지의 '돌봄 공백' 시간을 해결하기 위한 마을 공동육아센터 확충을 제안합니다.",
     problem: "오후 4~7시 사이 돌봄 공백이 가장 심각하며, 이 시간대에 맞벌이 부모들은 아이를 맡길 곳이 없어 한 명이 퇴직하는 상황이 반복됩니다.",
     solution: "동 단위 마을 공동육아센터 설치 의무화, 운영 시간 오전 7시~오후 10시 확대, 돌봄 종사자 처우 개선을 제안합니다.",
     effect: "부모의 경력 유지율 향상, 아동 돌봄 질 개선, 지역사회 공동체 강화.",
-    votes: 10,
-    date: "2026.03.15",
-    tagClass: "tag-pink"
-  },
-  {
-    id: 3,
-    title: "직장 내 성희롱 신고 시스템 완전 익명화",
-    category: "🛡️ 안전·폭력예방",
+    votes: 0, date: "2026.03.15", tagClass: "tag-pink" },
+  { id: 3, title: "직장 내 성희롱 신고 시스템 완전 익명화", category: "🛡️ 안전·폭력예방",
     summary: "성희롱 피해 신고 시 신원 노출 우려로 신고를 꺼리는 문제를 해결하기 위한 완전 익명 신고 채널 마련이 시급합니다.",
     problem: "현재 직장 내 성희롱 신고 시스템은 형식상 비밀보장을 하지만, 사내에서 피해자가 특정되는 경우가 많아 신고율이 현저히 낮습니다.",
     solution: "제3자 외부 기관을 통한 익명 신고 채널 의무 도입, 신고자 신원 정보 분리 저장, 신고 후 추적 가능한 현황 알림 서비스 제공.",
     effect: "피해 신고율 향상, 직장 내 성희롱 예방 효과, 피해자 2차 피해 방지.",
-    votes: 10,
-    date: "2026.03.12",
-    tagClass: "tag-orange"
-  },
-  {
-    id: 4,
-    title: "임산부·산모 의료비 본인부담금 완전 면제",
-    category: "🏥 건강·의료",
+    votes: 0, date: "2026.03.12", tagClass: "tag-orange" },
+  { id: 4, title: "임산부·산모 의료비 본인부담금 완전 면제", category: "🏥 건강·의료",
     summary: "임신과 출산 과정에서 발생하는 의료비 부담을 국가가 전액 지원하여 저출생 문제를 근본적으로 해결해야 합니다.",
     problem: "산전 검사, 분만, 산후 조리 과정에서 수백만 원의 비용이 발생하며, 이는 출산을 꺼리게 만드는 주요 요인 중 하나입니다.",
     solution: "임신 확인부터 출산 후 6개월까지 모든 의료비 본인부담금 면제, 산후우울증 상담 비용 지원 포함.",
     effect: "출산 비용 부담 제거, 산모 건강 증진, 출산율 향상.",
-    votes: 10,
-    date: "2026.03.10",
-    tagClass: "tag-blue"
-  },
-  {
-    id: 5,
-    title: "경력단절 여성 재취업 프로그램 전면 개편",
-    category: "🎓 교육·훈련",
+    votes: 0, date: "2026.03.10", tagClass: "tag-blue" },
+  { id: 5, title: "경력단절 여성 재취업 프로그램 전면 개편", category: "🎓 교육·훈련",
     summary: "현재의 경력단절여성 재취업 프로그램은 저임금·단순 직종에 집중되어 있어, 전문직 복귀를 지원하는 프로그램이 필요합니다.",
     problem: "경력단절 여성 재취업 훈련의 80% 이상이 서비스·사무 보조 직종에 집중되어, 이전 직장 수준으로의 복귀가 사실상 불가능합니다.",
     solution: "직종별 맞춤형 재취업 프로그램 개발, IT·금융·전문직 복귀 과정 확대, 기업 인턴십 연계.",
     effect: "경력단절 여성의 실질적 재취업 지원, 여성 고용의 질 향상.",
-    votes: 10,
-    date: "2026.03.08",
-    tagClass: "tag-green"
-  },
-  {
-    id: 6,
-    title: "1인 가구 여성 안전 주거 지원 강화",
-    category: "🏠 주거·생활",
+    votes: 0, date: "2026.03.08", tagClass: "tag-green" },
+  { id: 6, title: "1인 가구 여성 안전 주거 지원 강화", category: "🏠 주거·생활",
     summary: "1인 가구 여성들이 안전하게 거주할 수 있도록 CCTV 확충, 세이프홈 지원 확대, 임대료 지원을 강화해야 합니다.",
     problem: "1인 가구 여성은 주거 범죄 피해에 가장 취약하며, 안전한 주거지 확보를 위해 지불해야 하는 비용이 과도합니다.",
     solution: "1인 가구 여성 대상 세이프홈 설치 지원 확대, 여성안심 인증 주택 공급 확대, 안전 보안 비용 지원.",
     effect: "여성 1인 가구 주거 안전성 향상, 범죄 예방, 경제적 부담 경감.",
-    votes: 10,
-    date: "2026.03.05",
-    tagClass: "tag-purple"
-  }
+    votes: 0, date: "2026.03.05", tagClass: "tag-purple" }
 ];
+
+// ============================================================
+// ✅ 문제3 수정: localStorage로 투표 수 저장·불러오기
+// ============================================================
+function loadVotes() {
+  // 저장된 투표 수 불러오기
+  const savedVotes = JSON.parse(localStorage.getItem('icnwomen_votes') || '{}');
+  policies.forEach(p => {
+    if (savedVotes[p.id] !== undefined) p.votes = savedVotes[p.id];
+  });
+}
+
+function saveVotes() {
+  const votesMap = {};
+  policies.forEach(p => { votesMap[p.id] = p.votes; });
+  localStorage.setItem('icnwomen_votes', JSON.stringify(votesMap));
+}
+
+function getVotedIds() {
+  return JSON.parse(localStorage.getItem('icnwomen_voted') || '[]');
+}
+
+function saveVotedId(id) {
+  const ids = getVotedIds();
+  if (!ids.includes(id)) {
+    ids.push(id);
+    localStorage.setItem('icnwomen_voted', JSON.stringify(ids));
+  }
+}
+
+function getTotalVotes() {
+  return policies.reduce((sum, p) => sum + p.votes, 0);
+}
 
 // ============================================================
 // SPA ROUTER
@@ -1329,13 +840,9 @@ function showPage(pageName) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + pageName).classList.add('active');
   window.scrollTo(0, 0);
-
-  // Update nav active state
   document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
   const navEl = document.getElementById('nav-' + pageName);
   if (navEl) navEl.classList.add('active');
-
-  // Render page-specific content
   if (pageName === 'home')    renderHome();
   if (pageName === 'list')    renderList(policies);
   if (pageName === 'results') renderResults();
@@ -1347,8 +854,13 @@ function showPage(pageName) {
 function renderHome() {
   const grid = document.getElementById('home-cards');
   if (!grid) return;
-  const preview = policies.slice(0, 3);
-  grid.innerHTML = preview.map(p => createCard(p)).join('');
+  const sorted = [...policies].sort((a, b) => b.votes - a.votes);
+  grid.innerHTML = sorted.slice(0, 3).map(p => createCard(p)).join('');
+
+  // 통계 업데이트
+  document.getElementById('stat-participants').textContent = policies.length;
+  document.getElementById('stat-policies').textContent = policies.length;
+  document.getElementById('stat-votes').textContent = getTotalVotes();
 }
 
 function createCard(p) {
@@ -1361,8 +873,7 @@ function createCard(p) {
         <span class="vote-count">👍 ${p.votes.toLocaleString()}표</span>
         <span style="font-size:.8rem; color:var(--gray-400)">📅 ${p.date}</span>
       </div>
-    </div>
-  `;
+    </div>`;
 }
 
 // ============================================================
@@ -1373,50 +884,45 @@ function renderList(data) {
   if (!grid) return;
   if (data.length === 0) {
     grid.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:60px; color:var(--gray-400);">
-      <div style="font-size:3rem; margin-bottom:12px">🔍</div>
-      <p>검색 결과가 없어요</p>
-    </div>`;
+      <div style="font-size:3rem; margin-bottom:12px">🔍</div><p>검색 결과가 없어요</p></div>`;
     return;
   }
   grid.innerHTML = data.map(p => createCard(p)).join('');
 }
 
 function filterPolicies() {
-  const q     = document.getElementById('searchInput').value.toLowerCase();
-  const cat   = document.getElementById('categoryFilter').value;
-  const sort  = document.getElementById('sortFilter').value;
-
+  const q   = document.getElementById('searchInput').value.toLowerCase();
+  const cat = document.getElementById('categoryFilter').value;
+  const sort = document.getElementById('sortFilter').value;
   let filtered = policies.filter(p => {
     const matchQ   = !q || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q);
     const matchCat = !cat || p.category === cat;
     return matchQ && matchCat;
   });
-
-  if (sort === 'popular') {
-    filtered.sort((a, b) => b.votes - a.votes);
-  } else {
-    filtered.sort((a, b) => b.id - a.id);
-  }
-
+  if (sort === 'popular') filtered.sort((a, b) => b.votes - a.votes);
+  else filtered.sort((a, b) => b.id - a.id);
   renderList(filtered);
 }
 
 // ============================================================
 // DETAIL
 // ============================================================
+let currentPolicyId = null;
 let currentVotes = 0;
 let hasVoted = false;
 
 function showDetail(id) {
+  currentPolicyId = id;
   const p = policies.find(x => x.id === id) || policies[0];
   document.getElementById('detail-tag').textContent = p.category;
   document.getElementById('detail-title').textContent = p.title;
   document.getElementById('detail-problem').textContent = p.problem;
   document.getElementById('detail-solution').textContent = p.solution;
   document.getElementById('detail-effect').textContent = p.effect;
+  document.getElementById('detail-date').textContent = '📅 ' + p.date;
 
   currentVotes = p.votes;
-  hasVoted = false;
+  hasVoted = getVotedIds().includes(id); // ✅ 이미 투표했는지 확인
   updateVoteUI();
   showPage('detail');
 }
@@ -1425,11 +931,9 @@ function updateVoteUI() {
   const numEl = document.getElementById('detail-votes');
   const btn   = document.getElementById('voteBtn');
   const bar   = document.getElementById('detail-vote-bar');
-
   numEl.innerHTML = `${currentVotes.toLocaleString()} <span>표</span>`;
-  const pct = Math.min(Math.round(currentVotes / 400 * 100), 100);
+  const pct = Math.min(Math.round(currentVotes / 50 * 100), 100);
   bar.style.width = pct + '%';
-
   if (hasVoted) {
     btn.textContent = '✅ 투표 완료!';
     btn.classList.add('voted');
@@ -1443,9 +947,16 @@ function handleVote() {
   if (hasVoted) return;
   hasVoted = true;
   currentVotes++;
-  updateVoteUI();
 
-  // Brief animation
+  // ✅ 정책 데이터에 반영
+  const p = policies.find(x => x.id === currentPolicyId);
+  if (p) p.votes = currentVotes;
+
+  // ✅ localStorage에 저장 (새로고침해도 유지)
+  saveVotes();
+  saveVotedId(currentPolicyId);
+
+  updateVoteUI();
   const numEl = document.getElementById('detail-votes');
   numEl.style.transform = 'scale(1.15)';
   setTimeout(() => { numEl.style.transform = 'scale(1)'; }, 300);
@@ -1462,41 +973,31 @@ function copyLink() {
 // ============================================================
 function renderResults() {
   const sorted = [...policies].sort((a, b) => b.votes - a.votes);
-
-  // TOP 3
   const top3 = document.getElementById('top3-cards');
   const medals = ['🥇','🥈','🥉'];
-  const cardOrder = [sorted[1], sorted[0], sorted[2]]; // 2nd, 1st, 3rd for visual
+  const cardOrder = [sorted[1], sorted[0], sorted[2]];
   const orderClass = ['top-card-2','top-card-1','top-card-3'];
   top3.innerHTML = cardOrder.map((p, i) => {
     const realRank = sorted.indexOf(p) + 1;
-    return `
-      <div class="top-card ${orderClass[i]}" onclick="showDetail(${p.id})">
-        <span class="top-rank-emoji">${medals[realRank-1]}</span>
-        <div class="top-card-title">${p.title}</div>
-        <div style="margin:8px 0"><span class="tag tag-purple" style="font-size:.75rem">${p.category}</span></div>
-        <div class="top-card-votes">${p.votes.toLocaleString()} <span>표</span></div>
-      </div>
-    `;
+    return `<div class="top-card ${orderClass[i]}" onclick="showDetail(${p.id})">
+      <span class="top-rank-emoji">${medals[realRank-1]}</span>
+      <div class="top-card-title">${p.title}</div>
+      <div style="margin:8px 0"><span class="tag tag-purple" style="font-size:.75rem">${p.category}</span></div>
+      <div class="top-card-votes">${p.votes.toLocaleString()} <span>표</span></div>
+    </div>`;
   }).join('');
 
-  // Full list
   const list = document.getElementById('result-list');
   list.innerHTML = sorted.slice(0, 10).map((p, i) => {
     const rankClass = i === 0 ? 'rank-1' : i === 1 ? 'rank-2' : i === 2 ? 'rank-3' : 'rank-n';
-    return `
-      <div class="result-item" onclick="showDetail(${p.id})">
-        <div class="rank-badge ${rankClass}">${i + 1}</div>
-        <div class="result-info">
-          <div class="result-title">${p.title}</div>
-          <div class="result-meta">
-            <span class="tag ${p.tagClass}" style="font-size:.75rem">${p.category}</span>
-            &nbsp;📅 ${p.date}
-          </div>
-        </div>
-        <div class="result-votes">👍 ${p.votes.toLocaleString()}</div>
+    return `<div class="result-item" onclick="showDetail(${p.id})">
+      <div class="rank-badge ${rankClass}">${i + 1}</div>
+      <div class="result-info">
+        <div class="result-title">${p.title}</div>
+        <div class="result-meta"><span class="tag ${p.tagClass}" style="font-size:.75rem">${p.category}</span>&nbsp;📅 ${p.date}</div>
       </div>
-    `;
+      <div class="result-votes">👍 ${p.votes.toLocaleString()}</div>
+    </div>`;
   }).join('');
 
   renderCatResults('전체');
@@ -1510,8 +1011,7 @@ function setCatTab(el, cat) {
 
 function renderCatResults(cat) {
   const sorted = [...policies].sort((a, b) => b.votes - a.votes);
-  const filtered = cat === '전체' ? sorted :
-    sorted.filter(p => p.category.includes(cat));
+  const filtered = cat === '전체' ? sorted : sorted.filter(p => p.category.includes(cat));
   const list = document.getElementById('cat-result-list');
   list.innerHTML = filtered.slice(0, 5).map((p, i) => `
     <div class="result-item" onclick="showDetail(${p.id})">
@@ -1521,60 +1021,15 @@ function renderCatResults(cat) {
         <div class="result-meta"><span class="tag ${p.tagClass}" style="font-size:.75rem">${p.category}</span></div>
       </div>
       <div class="result-votes">👍 ${p.votes.toLocaleString()}</div>
-    </div>
-  `).join('');
-}
-
-// ============================================================
-// FORM
-// ============================================================
-function updateChar(inputId, countId, max) {
-  const el = document.getElementById(inputId);
-  const cnt = document.getElementById(countId);
-  if (el && cnt) cnt.textContent = el.value.length;
-}
-
-function handleSubmit(e) {
-  e.preventDefault();
-  document.getElementById('successModal').classList.add('open');
-}
-
-function closeModal() {
-  document.getElementById('successModal').classList.remove('open');
-  document.getElementById('policyForm').reset();
-  // reset char counts
-  ['char-title','char-problem','char-solution','char-effect'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = '0';
-  });
-  showPage('list');
-}
-
-// ============================================================
-// COUNTER ANIMATION
-// ============================================================
-function animateCounter(el, target, suffix='') {
-  let current = 0;
-  const step = Math.ceil(target / 60);
-  const timer = setInterval(() => {
-    current = Math.min(current + step, target);
-    el.textContent = current.toLocaleString() + suffix;
-    if (current >= target) clearInterval(timer);
-  }, 20);
+    </div>`).join('');
 }
 
 // ============================================================
 // INIT
 // ============================================================
 window.addEventListener('DOMContentLoaded', () => {
+  loadVotes(); // ✅ 저장된 투표 수 먼저 불러오기
   renderHome();
-
-  // Animate stat counters
-  setTimeout(() => {
-    animateCounter(document.getElementById('stat-participants'), 10);
-    animateCounter(document.getElementById('stat-policies'), 10);
-    animateCounter(document.getElementById('stat-votes'), 10);
-  }, 300);
 });
 </script>
 </body>
